@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CPPProjectServer {
@@ -15,7 +16,7 @@ namespace CPPProjectServer {
             Listener.Start();
 
             while (true) {
-                new Client(Listener.AcceptTcpClient());
+                ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), Listener.AcceptTcpClient());
             }
         }
 
@@ -23,6 +24,10 @@ namespace CPPProjectServer {
             if (Listener != null) {
                 Listener.Stop();
             }
+        }
+
+        static void ClientThread(Object StateInfo) {
+            new Client((TcpClient)StateInfo);
         }
     }
 }
