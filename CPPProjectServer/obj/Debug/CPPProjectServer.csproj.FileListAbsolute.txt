@@ -1,1 +1,6 @@
 D:\ap\!3kurs\CPPProjectServer\CPPProjectServer\bin\Debug\CPPProjectServer.exe.config
+D:\ap\!3kurs\CPPProjectServer\CPPProjectServer\bin\Debug\CPPProjectServer.exe
+D:\ap\!3kurs\CPPProjectServer\CPPProjectServer\bin\Debug\CPPProjectServer.pdb
+D:\ap\!3kurs\CPPProjectServer\CPPProjectServer\obj\Debug\CPPProjectServer.csprojResolveAssemblyReference.cache
+D:\ap\!3kurs\CPPProjectServer\CPPProjectServer\obj\Debug\CPPProjectServer.exe
+D:\ap\!3kurs\CPPProjectServer\CPPProjectServer\obj\Debug\CPPProjectServer.pdb

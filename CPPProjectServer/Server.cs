@@ -15,7 +15,7 @@ namespace CPPProjectServer {
             Listener.Start();
 
             while (true) {
-                Listener.AcceptTcpClient();
+                new Client(Listener.AcceptTcpClient());
             }
         }
 
