@@ -10,6 +10,7 @@ namespace CPPProjectServer
     {
         static void Main(string[] args)
         {
+            new Server(880);
         }
     }
 }
