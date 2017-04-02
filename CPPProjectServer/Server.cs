@@ -14,9 +14,13 @@ namespace CPPProjectServer {
         public Server(int Port) {
             Listener = new TcpListener(IPAddress.Any, Port);
             Listener.Start();
+            Console.WriteLine("Server started on port " + Port);
 
             while (true) {
-                ThreadPool.QueueUserWorkItem(new WaitCallback(ClientThread), Listener.AcceptTcpClient());
+                TcpClient Client = Listener.AcceptTcpClient();
+                Client.ReceiveTimeout = 100000;
+                Thread Thread = new Thread(new ParameterizedThreadStart(ClientThread));
+                Thread.Start(Client);
             }
         }
 

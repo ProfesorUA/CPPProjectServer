@@ -11,11 +11,7 @@ namespace CPPProjectServer
     {
         static void Main(string[] args)
         {
-            int MaxThreadsCount = Environment.ProcessorCount * 2;
-            ThreadPool.SetMaxThreads(MaxThreadsCount, MaxThreadsCount);
-            ThreadPool.SetMinThreads(2, 2);
-
-            new Server(881);
+            new Server(80);
         }
     }
 }
