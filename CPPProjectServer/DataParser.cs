@@ -14,6 +14,9 @@ namespace CPPProjectServer
                 return new Dictionary<string, string>();
             } else
             {
+                if(requestURI.StartsWith("/")) {
+                   requestURI = requestURI.Remove(0, 1);
+                }
                 string[] result = requestURI.Split('_');
                 if(result.Count() != 6)
                 {
