@@ -73,7 +73,8 @@ namespace CPPProjectServer {
             {
                 string massResult = Convert.ToString(MassConverter.convert(requestDictionary["fromWeight"], requestDictionary["toWeight"], Convert.ToDouble(requestDictionary["fromWeightNumber"])));
                 string result = CurrencyConverter.getConvertedCurrency(requestDictionary["fromCurrency"], requestDictionary["toCurrency"], requestDictionary["fromCurrencyNumber"]);
-                string Html = "<html><body><h1>" + massResult + " " + result + "</h1></body></html>";
+                string div = Convert.ToString(Convert.ToDouble(result) / Convert.ToDouble(massResult));
+                string Html = "<html><body><h1>" + massResult + " " + result + " " + div + "</h1></body></html>";
                 string Str = "HTTP/1.1 200 OK\nContent-type: text/html\nContent-Length:" + Html.Length.ToString() + "\n\n" + Html;
                 byte[] Buffer2 = Encoding.ASCII.GetBytes(Str);
                 Client.GetStream().Write(Buffer2, 0, Buffer2.Length);
